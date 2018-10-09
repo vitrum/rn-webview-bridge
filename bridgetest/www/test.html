@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="./debug.min.js"></script>
+        <script type="text/javascript" src="./Brige.js"></script>
+        <style type="text/css">
+            *{
+                padding: 0; margin: 0; box-sizing:content-box; font-family:'Times New Roman', 'Times, serif'; font-size: 13px;
+            }
+            body{
+                background: #FFB440;
+                color: #fff;
+                padding-top: 15px;
+            }
+            p{ margin-bottom: 10px; text-align: center;}
+            button{border-radius: 4px; border: none; background: #fff; font-size: 12px; width: 80%; padding: 7px; line-height: 30px; text-align: center; color: #FFB440;}
+        </style>
+    </head>
+    <body>
+        <p>This is webview(HTML Area)</p>
+        <p>
+            <button id="Btn_MSG" class="button">Send MSG ToWebView(RN)</button>
+        </p>
+
+        <p>
+            <button id="Btn_LOGIN" class="button">Send LOGIN ToWebView(RN)</button>
+        </p>
+
+        <p>
+            <button id="Btn_None" class="button">Send Nonexistent ToWebView(RN)</button>
+        </p>
+        <p>以下是来自RN-WEBVIEW 发送的(回执)信息：</p>
+        <div id="messageArea" style="width:80%; margin:5px 9%; font-size:13px;background:#fff;border-radius: 4px; padding: 1%; word-break: break-all;"> </div>
+        
+        <script type="text/javascript">
+            const sendToRn = function(action , data){
+                window.WebviewBrige.send(
+                    action,data , 
+                    function(oData){
+                        document.getElementById('messageArea').innerHTML = JSON.stringify(oData);
+                        document.getElementById('messageArea').style.color = '#FFB440';
+                    },
+                    function(oData){
+                        document.getElementById('messageArea').innerHTML = JSON.stringify(oData);
+                        document.getElementById('messageArea').style.color = 'red';
+                    }
+                );
+            }
+            document.getElementById('Btn_MSG').onclick = function(){
+                sendToRn( 'UPPERCASE' , {str:'my name is simon.'} );
+            }
+            document.getElementById('Btn_LOGIN').onclick = function(){
+                sendToRn( 'LOGIN' , {backUrl:'www.baidu.com'} );
+            }
+            document.getElementById('Btn_None').onclick = function(){
+                sendToRn( 'NONE' , {info:'test'} );
+            }
+        </script>
+    </body>
+</html>

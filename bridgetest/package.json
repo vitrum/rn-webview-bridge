@@ -6,16 +6,18 @@
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"test": "jest",
 		"bundle-ios": "node node_modules/react-native/local-cli/cli.js bundle --entry-file index.ios.js  --platform ios --dev false --bundle-output ./release_ios/main.jsbundle --assets-dest ./release_ios",
-    	"build-a": "cd android && ./gradlew assembleRelease"
+		"build-a": "cd android && ./gradlew assembleRelease"
 	},
 	"dependencies": {
 		"react": "16.0.0-alpha.6",
-		"react-native": "0.44.3"
+		"react-native": "0.44.3",
+		"antd-mobile-rn": "2.2.1"
 	},
 	"devDependencies": {
 		"babel-jest": "23.6.0",
 		"babel-preset-react-native": "4.0.1",
 		"jest": "23.6.0",
+		"mockjs": "^1.0.1-beta3",
 		"react-test-renderer": "16.0.0-alpha.6"
 	},
 	"jest": {

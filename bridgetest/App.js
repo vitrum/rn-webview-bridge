@@ -145,6 +145,7 @@ export default class App extends Component <Props> {
           <Text>{ this.state.text2 }</Text>
         </View>
         </View>
+        
         <WebView 
           style={styles.webview} 
           ref={webview => { this.myWebView = webview; }}
