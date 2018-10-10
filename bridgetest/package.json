@@ -9,9 +9,10 @@
 		"build-a": "cd android && ./gradlew assembleRelease"
 	},
 	"dependencies": {
+		"antd-mobile-rn": "2.2.1",
 		"react": "16.0.0-alpha.6",
 		"react-native": "0.44.3",
-		"antd-mobile-rn": "2.2.1"
+		"react-native-image-picker": "0.26.7"
 	},
 	"devDependencies": {
 		"babel-jest": "23.6.0",
