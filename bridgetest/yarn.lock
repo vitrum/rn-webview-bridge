@@ -161,6 +161,26 @@ antd-mobile-rn@2.2.1:
     rmc-tabs "~1.2.0"
     rn-topview "^0.1.6"
 
+antd-mobile-rn@2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/antd-mobile-rn/-/antd-mobile-rn-2.2.1.tgz#fd1909f0a3b7c15185f76f5f24e5e09f53a18480"
+  dependencies:
+    array-tree-filter "~2.1.0"
+    babel-runtime "6.x"
+    normalize-css-color "^1.0.2"
+    rc-swipeout "~2.0.0"
+    react-native-camera-roll-picker "^1.2.1"
+    react-native-collapsible "^0.9.0"
+    react-native-drawer-layout "~1.3.0"
+    react-native-menu "^0.23.0"
+    rmc-cascader "~5.0.0"
+    rmc-date-picker "^6.0.8"
+    rmc-dialog "^1.0.1"
+    rmc-input-number "^1.0.0"
+    rmc-picker "~5.0.0"
+    rmc-tabs "~1.2.0"
+    rn-topview "^0.1.6"
+
 anymatch@^1.3.0:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/anymatch/-/anymatch-1.3.2.tgz#553dcb8f91e3c889845dfdba34c77721b90b9d7a"
@@ -260,6 +280,14 @@ array-tree-filter@~2.1.0:
   version "2.1.0"
   resolved "http://registry.npm.taobao.org/array-tree-filter/download/array-tree-filter-2.1.0.tgz#873ac00fec83749f255ac8dd083814b4f6329190"
   integrity sha1-hzrAD+yDdJ8lWsjdCDgUtPYykZA=
+
+array-tree-filter@1.0.x:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/array-tree-filter/-/array-tree-filter-1.0.1.tgz#0a8ad1eefd38ce88858632f9cc0423d7634e4d5d"
+
+array-tree-filter@~2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/array-tree-filter/-/array-tree-filter-2.1.0.tgz#873ac00fec83749f255ac8dd083814b4f6329190"
 
 array-uniq@^1.0.2:
   version "1.0.3"
@@ -1384,8 +1412,12 @@ class-utils@^0.3.5:
 
 classnames@2.x, classnames@^2.2.0, classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
+<<<<<<< HEAD
   resolved "http://registry.npm.taobao.org/classnames/download/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha1-Q5Nb/90pHzJtrQogUwmzjQD2UM4=
+=======
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+>>>>>>> 77a02017d2421cc5d25b3902bc522a6d8a24d216
 
 cli-cursor@^1.0.1:
   version "1.0.2"
@@ -1487,8 +1519,12 @@ combined-stream@~1.0.6:
 
 commander@*:
   version "2.19.0"
+<<<<<<< HEAD
   resolved "http://registry.npm.taobao.org/commander/download/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
   integrity sha1-9hmKqE5bg8RgVLlN3tv+1e6f8So=
+=======
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
+>>>>>>> 77a02017d2421cc5d25b3902bc522a6d8a24d216
 
 commander@^2.9.0:
   version "2.18.0"
@@ -1507,6 +1543,12 @@ component-classes@^1.2.5:
   dependencies:
     component-indexof "0.0.3"
 
+component-classes@^1.2.5:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/component-classes/-/component-classes-1.2.6.tgz#c642394c3618a4d8b0b8919efccbbd930e5cd691"
+  dependencies:
+    component-indexof "0.0.3"
+
 component-emitter@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
@@ -1516,6 +1558,10 @@ component-indexof@0.0.3:
   version "0.0.3"
   resolved "http://registry.npm.taobao.org/component-indexof/download/component-indexof-0.0.3.tgz#11d091312239eb8f32c8f25ae9cb002ffe8d3c24"
   integrity sha1-EdCRMSI5648yyPJa6csAL/6NPCQ=
+
+component-indexof@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/component-indexof/-/component-indexof-0.0.3.tgz#11d091312239eb8f32c8f25ae9cb002ffe8d3c24"
 
 compressible@~2.0.5:
   version "2.0.15"
@@ -1667,6 +1713,14 @@ create-react-class@^15.6.0:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
+create-react-class@^15.6.0:
+  version "15.6.3"
+  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
+  dependencies:
+    fbjs "^0.8.9"
+    loose-envify "^1.3.1"
+    object-assign "^4.1.1"
+
 cross-spawn@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-3.0.1.tgz#1256037ecb9f0c5f79e3d6ef135e30770184b982"
@@ -1695,8 +1749,12 @@ csrf@~3.0.0:
 
 css-animation@^1.3.2:
   version "1.4.1"
+<<<<<<< HEAD
   resolved "http://registry.npm.taobao.org/css-animation/download/css-animation-1.4.1.tgz#5b8813125de0fbbbb0bbe1b472ae84221469b7a8"
   integrity sha1-W4gTEl3g+7uwu+G0cq6EIhRpt6g=
+=======
+  resolved "https://registry.yarnpkg.com/css-animation/-/css-animation-1.4.1.tgz#5b8813125de0fbbbb0bbe1b472ae84221469b7a8"
+>>>>>>> 77a02017d2421cc5d25b3902bc522a6d8a24d216
   dependencies:
     babel-runtime "6.x"
     component-classes "^1.2.5"
@@ -3949,8 +4007,12 @@ mkdirp@^0.5.0, mkdirp@^0.5.1:
 
 mockjs@^1.0.1-beta3:
   version "1.0.1-beta3"
+<<<<<<< HEAD
   resolved "http://registry.npm.taobao.org/mockjs/download/mockjs-1.0.1-beta3.tgz#d234f3c27256397564f2c955142e891909537209"
   integrity sha1-0jTzwnJWOXVk8slVFC6JGQlTcgk=
+=======
+  resolved "http://registry.npmjs.org/mockjs/-/mockjs-1.0.1-beta3.tgz#d234f3c27256397564f2c955142e891909537209"
+>>>>>>> 77a02017d2421cc5d25b3902bc522a6d8a24d216
   dependencies:
     commander "*"
 
@@ -4105,8 +4167,12 @@ nopt@^4.0.1:
 
 normalize-css-color@^1.0.2:
   version "1.0.2"
+<<<<<<< HEAD
   resolved "http://registry.npm.taobao.org/normalize-css-color/download/normalize-css-color-1.0.2.tgz#02991e97cccec6623fe573afbbf0de6a1f3e9f8d"
   integrity sha1-Apkel8zOxmI/5XOvu/Deah8+n40=
+=======
+  resolved "https://registry.yarnpkg.com/normalize-css-color/-/normalize-css-color-1.0.2.tgz#02991e97cccec6623fe573afbbf0de6a1f3e9f8d"
+>>>>>>> 77a02017d2421cc5d25b3902bc522a6d8a24d216
 
 normalize-package-data@^2.3.2:
   version "2.4.0"
@@ -4538,8 +4604,12 @@ prompts@^0.1.9:
 
 prop-types@15.x, prop-types@^15.5.10:
   version "15.6.2"
+<<<<<<< HEAD
   resolved "http://registry.npm.taobao.org/prop-types/download/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   integrity sha1-BdXKd7RFPphdYPx/+MhZCUpJcQI=
+=======
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
+>>>>>>> 77a02017d2421cc5d25b3902bc522a6d8a24d216
   dependencies:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
@@ -4586,6 +4656,12 @@ raf@^3.1.0, raf@^3.4.0:
   dependencies:
     performance-now "^2.1.0"
 
+raf@^3.1.0, raf@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.0.tgz#a28876881b4bc2ca9117d4138163ddb80f781575"
+  dependencies:
+    performance-now "^2.1.0"
+
 random-bytes@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/random-bytes/-/random-bytes-1.0.0.tgz#4f68a1dc0ae58bd3fb95848c30324db75d64360b"
@@ -4616,8 +4692,12 @@ raw-body@~2.1.2:
 
 rc-animate@2.x:
   version "2.5.4"
+<<<<<<< HEAD
   resolved "http://registry.npm.taobao.org/rc-animate/download/rc-animate-2.5.4.tgz#3b308c42e137a2e3fb578650fdb145c2100fcc35"
   integrity sha1-OzCMQuE3ouP7V4ZQ/bFFwhAPzDU=
+=======
+  resolved "https://registry.yarnpkg.com/rc-animate/-/rc-animate-2.5.4.tgz#3b308c42e137a2e3fb578650fdb145c2100fcc35"
+>>>>>>> 77a02017d2421cc5d25b3902bc522a6d8a24d216
   dependencies:
     babel-runtime "6.x"
     classnames "^2.2.6"
@@ -4628,15 +4708,23 @@ rc-animate@2.x:
 
 rc-gesture@~0.0.18, rc-gesture@~0.0.22:
   version "0.0.22"
+<<<<<<< HEAD
   resolved "http://registry.npm.taobao.org/rc-gesture/download/rc-gesture-0.0.22.tgz#fbcbdd5b46387a978b3ede48b42748e8ff77dddd"
   integrity sha1-+8vdW0Y4epeLPt5ItCdI6P933d0=
+=======
+  resolved "https://registry.yarnpkg.com/rc-gesture/-/rc-gesture-0.0.22.tgz#fbcbdd5b46387a978b3ede48b42748e8ff77dddd"
+>>>>>>> 77a02017d2421cc5d25b3902bc522a6d8a24d216
   dependencies:
     babel-runtime "6.x"
 
 rc-swipeout@~2.0.0:
   version "2.0.11"
+<<<<<<< HEAD
   resolved "http://registry.npm.taobao.org/rc-swipeout/download/rc-swipeout-2.0.11.tgz#dfad9c7b38a15ea0376e39cb3356e36fed7a4155"
   integrity sha1-362cezihXqA3bjnLM1bjb+16QVU=
+=======
+  resolved "https://registry.yarnpkg.com/rc-swipeout/-/rc-swipeout-2.0.11.tgz#dfad9c7b38a15ea0376e39cb3356e36fed7a4155"
+>>>>>>> 77a02017d2421cc5d25b3902bc522a6d8a24d216
   dependencies:
     babel-runtime "6.x"
     classnames "2.x"
@@ -4673,6 +4761,7 @@ react-devtools-core@^2.0.8:
 
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
+<<<<<<< HEAD
   resolved "http://registry.npm.taobao.org/react-lifecycles-compat/download/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha1-TxonOv38jzSIqMUWv9p4+HI1I2I=
 
@@ -4685,11 +4774,23 @@ react-native-collapsible@^0.9.0:
   version "0.9.0"
   resolved "http://registry.npm.taobao.org/react-native-collapsible/download/react-native-collapsible-0.9.0.tgz#207849faa15493820d19fa6a5e58f7c7b6c1b910"
   integrity sha1-IHhJ+qFUk4INGfpqXlj3x7bBuRA=
+=======
+  resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+
+react-native-camera-roll-picker@^1.2.1:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/react-native-camera-roll-picker/-/react-native-camera-roll-picker-1.2.3.tgz#b117fd3a2b9012dcccee1261a9bc427226b8d6d2"
+
+react-native-collapsible@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/react-native-collapsible/-/react-native-collapsible-0.9.0.tgz#207849faa15493820d19fa6a5e58f7c7b6c1b910"
+>>>>>>> 77a02017d2421cc5d25b3902bc522a6d8a24d216
   dependencies:
     prop-types "^15.5.10"
 
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
+<<<<<<< HEAD
   resolved "http://registry.npm.taobao.org/react-native-dismiss-keyboard/download/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"
   integrity sha1-MohiQrPyMX4SHzrrmwpYXiuHm0k=
 
@@ -4709,6 +4810,19 @@ react-native-menu@^0.23.0:
   version "0.23.0"
   resolved "http://registry.npm.taobao.org/react-native-menu/download/react-native-menu-0.23.0.tgz#3c023239aed95d419275df50c199982ad7eb062b"
   integrity sha1-PAIyOa7ZXUGSdd9QwZmYKtfrBis=
+=======
+  resolved "https://registry.yarnpkg.com/react-native-dismiss-keyboard/-/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"
+
+react-native-drawer-layout@~1.3.0:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/react-native-drawer-layout/-/react-native-drawer-layout-1.3.2.tgz#b9740d7663a1dc4f88a61b9c6d93d2d948ea426e"
+  dependencies:
+    react-native-dismiss-keyboard "1.0.0"
+
+react-native-menu@^0.23.0:
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/react-native-menu/-/react-native-menu-0.23.0.tgz#3c023239aed95d419275df50c199982ad7eb062b"
+>>>>>>> 77a02017d2421cc5d25b3902bc522a6d8a24d216
   dependencies:
     create-react-class "^15.6.0"
     prop-types "^15.5.10"
@@ -4716,8 +4830,12 @@ react-native-menu@^0.23.0:
 
 react-native-swipeout@^2.2.2:
   version "2.3.6"
+<<<<<<< HEAD
   resolved "http://registry.npm.taobao.org/react-native-swipeout/download/react-native-swipeout-2.3.6.tgz#47dac8a835825cf3f2eef9e495574a3d9ab6d3fa"
   integrity sha1-R9rIqDWCXPPy7vnklVdKPZq20/o=
+=======
+  resolved "https://registry.yarnpkg.com/react-native-swipeout/-/react-native-swipeout-2.3.6.tgz#47dac8a835825cf3f2eef9e495574a3d9ab6d3fa"
+>>>>>>> 77a02017d2421cc5d25b3902bc522a6d8a24d216
   dependencies:
     create-react-class "^15.6.0"
     prop-types "^15.5.10"
@@ -4841,8 +4959,12 @@ react-transform-hmr@^1.0.4:
 
 react-tween-state@^0.1.5:
   version "0.1.5"
+<<<<<<< HEAD
   resolved "http://registry.npm.taobao.org/react-tween-state/download/react-tween-state-0.1.5.tgz#e98b066551efb93cb92dd1be14995c2e3deae339"
   integrity sha1-6YsGZVHvuTy5LdG+FJlcLj3q4zk=
+=======
+  resolved "https://registry.yarnpkg.com/react-tween-state/-/react-tween-state-0.1.5.tgz#e98b066551efb93cb92dd1be14995c2e3deae339"
+>>>>>>> 77a02017d2421cc5d25b3902bc522a6d8a24d216
   dependencies:
     raf "^3.1.0"
     tween-functions "^1.0.1"
@@ -5187,6 +5309,63 @@ rn-topview@^0.1.6:
   version "0.1.6"
   resolved "http://registry.npm.taobao.org/rn-topview/download/rn-topview-0.1.6.tgz#b1b1216caf730f8547cd23c9b918ad0288454b11"
   integrity sha1-sbEhbK9zD4VHzSPJuRitAohFSxE=
+
+rmc-cascader@~5.0.0:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/rmc-cascader/-/rmc-cascader-5.0.2.tgz#8c1d0ac197837e187f50d9bc3fcd0267cfc7b022"
+  dependencies:
+    array-tree-filter "1.0.x"
+    babel-runtime "6.x"
+    rmc-picker "~5.0.0"
+
+rmc-date-picker@^6.0.8:
+  version "6.0.8"
+  resolved "https://registry.yarnpkg.com/rmc-date-picker/-/rmc-date-picker-6.0.8.tgz#9aab87b3aa8dc9c5a57349d8f0b05de4e8f4808a"
+  dependencies:
+    babel-runtime "6.x"
+    rmc-picker "~5.0.0"
+
+rmc-dialog@^1.0.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/rmc-dialog/-/rmc-dialog-1.1.1.tgz#1d7fbc6b2cad5b0b53fbab71fe29636d76f78217"
+  dependencies:
+    babel-runtime "6.x"
+    rc-animate "2.x"
+
+rmc-feedback@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/rmc-feedback/-/rmc-feedback-2.0.0.tgz#cbc6cb3ae63c7a635eef0e25e4fbaf5ac366eeaa"
+  dependencies:
+    babel-runtime "6.x"
+    classnames "^2.2.5"
+
+rmc-input-number@^1.0.0:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/rmc-input-number/-/rmc-input-number-1.0.5.tgz#42e02a27b0c3c366be9ff0ce19d818b71e406f8f"
+  dependencies:
+    babel-runtime "6.x"
+    classnames "^2.2.0"
+    rmc-feedback "^2.0.0"
+
+rmc-picker@~5.0.0:
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/rmc-picker/-/rmc-picker-5.0.5.tgz#2a33244ced1f4e6b10611ff6e0384a5dbbfc566e"
+  dependencies:
+    babel-runtime "6.x"
+    classnames "^2.2.0"
+    rmc-dialog "^1.0.1"
+    rmc-feedback "^2.0.0"
+
+rmc-tabs@~1.2.0:
+  version "1.2.27"
+  resolved "https://registry.yarnpkg.com/rmc-tabs/-/rmc-tabs-1.2.27.tgz#19a8c97aa1a5ffb43b55849352048fcd17abe96e"
+  dependencies:
+    babel-runtime "6.x"
+    rc-gesture "~0.0.18"
+
+rn-topview@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/rn-topview/-/rn-topview-0.1.6.tgz#b1b1216caf730f8547cd23c9b918ad0288454b11"
 
 rndm@1.2.0:
   version "1.2.0"
@@ -5832,8 +6011,12 @@ tunnel-agent@^0.6.0:
 
 tween-functions@^1.0.1:
   version "1.2.0"
+<<<<<<< HEAD
   resolved "http://registry.npm.taobao.org/tween-functions/download/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
   integrity sha1-GuOlDnxguz3vd06scHrLynO7w/8=
+=======
+  resolved "https://registry.yarnpkg.com/tween-functions/-/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
+>>>>>>> 77a02017d2421cc5d25b3902bc522a6d8a24d216
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
