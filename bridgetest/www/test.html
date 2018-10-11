@@ -137,7 +137,24 @@
                 });
             }
             document.getElementById('Btn_LOGIN').onclick = function(){
-                sendToRn( 'LOGIN' , {backUrl:'www.baidu.com'} );
+                window.WebviewBrige.send('LOGIN' , {backUrl:'www.alibaba.com'} )
+                .then(
+                    function(oData){
+                        document.getElementById('messageArea').innerHTML = JSON.stringify(oData);
+                        document.getElementById('messageArea').style.color = '#FFB440';
+                        return oData;
+                    },
+                    function(oData){
+                        document.getElementById('messageArea').innerHTML = JSON.stringify(oData);
+                        document.getElementById('messageArea').style.color = 'red';
+                        return oData;
+                    }
+                )
+                .then(
+                    function(oData){
+                        window.debug.log(oData);
+                    }
+                );
             }
             document.getElementById('Btn_None').onclick = function(){
                 sendToRn( 'NONE' , {info:'test'} );
