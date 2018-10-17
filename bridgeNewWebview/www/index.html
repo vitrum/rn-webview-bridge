@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="https://binnng.github.io/debug.js/build/debug.min.js"></script>
+    </head>
+    <body>
+        <p>This is webview</p>
+        <div id="container">
+            <button id="button" onclick="clickHandler();" >Send to RN</button>
+            <button id="button" onclick="clickHandlerLogin();" >Send to RN login</button>
+            <button id="button" onclick="clickHandlerNotexist();" >Send to RN Not Exist API</button>
+            <p id="console"></p>
+        </div>
+        <script>
+            (function(){
+
+                var promiseChain = Promise.resolve();
+
+
+                var promises = {};
+                var callbacks = {};
+
+                var init = function() {
+
+                const guid = function() {
+                    function s4() {
+                        return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+                    }
+                    return s4() + s4() + "-" + s4() + "-" + s4() + "-" + s4() + "-" + s4() + s4() + s4();
+                }
+
+                    window.webViewBridge = {
+                    /**
+                        * send message to the React-Native WebView onMessage handler
+                        * @param targetFunc - name of the function to invoke on the React-Native side
+                        * @param data - data to pass
+                        * @param success - success callback
+                        * @param error - error callback
+                        */
+                    send: function(targetFunc, data, success, error) {
+                        success = success || function(){};
+                        error = error || function () {};
+
+                        var msgObj = {
+                            targetFunc: targetFunc,
+                            data: data || {},
+                            msgId: guid(),
+                        };
+
+                        var msg = JSON.stringify(msgObj);
+
+                        promiseChain = promiseChain.then(function () {
+                            return new Promise(function (resolve, reject) {
+                                console.log("sending message " + msgObj.targetFunc);
+
+                                promises[msgObj.msgId] = {resolve: resolve, reject: reject};
+                                callbacks[msgObj.msgId] = {
+                                    onsuccess: success,
+                                    onerror: error
+                                };
+
+                                window.postMessage(msg);
+                            })
+                        }).catch(function (e) {
+                            console.error('rnBridge send failed ' + e.message);
+                        });
+                    },
+
+
+                };
+
+                    window.document.addEventListener('message', function(e) {
+                    console.log("message received from react native");
+
+                    var message;
+                    try {
+                        message = JSON.parse(e.data)
+                    }
+                    catch(err) {
+                        console.error("failed to parse message from react-native " + err);
+                        return;
+                    }
+
+                    //resolve promise - send next message if available
+                    if (promises[message.msgId]) {
+                        promises[message.msgId].resolve();
+                        delete promises[message.msgId];
+                    }
+
+                    //trigger callback
+                    if (message.args && callbacks[message.msgId]) {
+                        if (message.isSuccessfull) {
+                            callbacks[message.msgId].onsuccess.apply(null, message.args);
+                        }
+                        else {
+                            callbacks[message.msgId].onerror.apply(null, message.args);
+                        }
+                        delete callbacks[message.msgId];
+                    }
+
+                    });
+                };
+
+                init();
+            }());
+            
+        </script>
+        <script>
+            window.counter = 0;
+            function clickHandler() {
+                window.counter++;
+                window.webViewBridge.send('handleDataReceived', window.counter, function(res) {
+                    window.document.getElementById("button").setAttribute("style", "background-color: " + res);
+                    window.document.getElementById("console").innerHTML =res;
+                }, function(err) {
+                    window.document.getElementById("container").setAttribute("style", "background-color: " + err);
+                });
+                
+                // window.webViewBridge.send('functionToInvoke', {mydata: 'test'}, function(){console.log('success')},function(){console.log('error')});
+            }
+            function clickHandlerLogin(){
+                window.webViewBridge.send('handleLogin', window.counter, function(res) {
+                    window.document.getElementById("console").innerHTML = res;
+                }, function(err) {
+                    window.document.getElementById("container").setAttribute("style", "background-color: " + err);
+                });
+            }
+            function clickHandlerNotexist(){
+                window.webViewBridge.send('clickHandlerNotexist', window.counter, function(res) {
+                    alert('res');
+                    window.document.getElementById("console").innerHTML = res;
+                }, function(err) {
+                    alert('err');
+                    window.document.getElementById("console").innerHTML = err;
+                });
+            }
+        </script>
+    </body>
+</html>
