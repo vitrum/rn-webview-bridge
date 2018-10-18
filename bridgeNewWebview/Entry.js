@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, View, Text,} from 'react-native';
-import { WebView } from 'react-native-webview';
+import {Platform, StyleSheet, View, Text, WebView} from 'react-native';
+// import { WebView } from 'react-native-webview';
 import { List,InputItem ,Modal,TextareaItem , Accordion,Toast,ImagePicker as AntImagePicker} from 'antd-mobile-rn';
 import ImagePicker from 'react-native-image-picker';
 import Mock from "mockjs";
@@ -26,6 +26,7 @@ export default class Entry extends Component <Props> {
       ImagePicker.showImagePicker({
         ...payload
       }, async response => {
+        console.log('ImagePicker response',response)
           let status = false;
           if (response.didCancel) {
               result = 'User cancelled image picker';
@@ -37,6 +38,7 @@ export default class Entry extends Component <Props> {
               result = response.customButton;
               console.log('User tapped custom button: ', response.customButton)
           } else {
+            
             status = true;
             result = response.data;
           }
@@ -227,8 +229,8 @@ export default class Entry extends Component <Props> {
           onMessage={this.onWebViewMessage.bind(this)}
           automaticallyAdjustContentInsets={false} 
           javaScriptEnabled={true} 
-          // source={this.source} 
-          source={{ uri: 'https://vitrum.github.io/rn-webview-bridge/src/test.html' }}
+          source={this.source} 
+          // source={{ uri: 'https://vitrum.github.io/rn-webview-bridge/src/test.html' }}
           /> 
       </View>
     );

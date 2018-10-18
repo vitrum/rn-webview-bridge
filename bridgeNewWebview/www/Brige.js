@@ -71,13 +71,14 @@
     
 
     window.document.addEventListener('message',function(oEvent){
+        // debug.log(oEvent,'已处理完毕并收到回执');
         var oReturnData = JSON.parse(oEvent.data);
         //通知类型的消息
         if(oReturnData.type === 'notice'){
             debug.log(oReturnData.action+'已发送成功并被接收。');
             return ;
         }
-         var sendInfo = _WebviewBrige._sendList[oReturnData.sendId] ;
+        var sendInfo = _WebviewBrige._sendList[oReturnData.sendId] ;
         if(!sendInfo){
             debug.error(oReturnData.action+'包裹信息丢失') ;
         }else{
