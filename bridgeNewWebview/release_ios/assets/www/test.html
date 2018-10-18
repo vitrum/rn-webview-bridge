@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="./debug.min.js"></script>
+        <script type="text/javascript" src="./Brige.js"></script>
+        <style type="text/css">
+            *{
+                padding: 0; margin: 0; box-sizing:content-box; font-family:'Times New Roman', 'Times, serif'; font-size: 13px;
+            }
+            body{
+                background: #FFB440;
+                color: #fff;
+                padding-top: 15px;
+            }
+            p{ margin-bottom: 10px; text-align: center;}
+            button{border-radius: 4px; border: none; background: #fff; font-size: 12px; width: 80%; padding: 7px; line-height: 30px; text-align: center; color: #FFB440;}
+        </style>
+    </head>
+    <body>
+        <p>This is webview(HTML Area)</p>
+
+        <p>
+            <button id="Btn_IMAGE" class="button">GET IMAGE FROM NATIVE</button>
+        </p>
+
+        <p>
+            <button id="Btn_VEDIO" class="button">GET VEDIO FROM NATIVE</button>
+        </p>
+
+        <p>
+            <button id="Btn_LOGIN" class="button">GET LOGIN FROM NATIVE</button>
+        </p>
+
+        <p>
+            <button id="Btn_None" class="button">Send Nonexistent ToWebView(RN)</button>
+        </p>
+
+        <p>
+            <button onclick="var debug = (window.debug || console);debug.clear();" class="button">清除所有通知</button>
+        </p>
+        <p>以下是来自RN-WEBVIEW 发送的(回执)信息：</p>
+        <div id="messageArea" style="width:80%; margin:5px 9%; font-size:13px;background:#fff;border-radius: 4px; padding: 1%; word-break: break-all;"> </div>
+        
+        <script type="text/javascript">
+            //向native 发送消息
+            const sendToRn = function(action , data, succCallback, failCallback){
+                window.WebviewBrige.send(
+                    action,data , 
+                    succCallback || function(oData){
+                        document.getElementById('messageArea').innerHTML = JSON.stringify(oData);
+                        document.getElementById('messageArea').style.color = '#FFB440';
+                    },
+                    failCallback || function(oData){
+                        document.getElementById('messageArea').innerHTML = JSON.stringify(oData);
+                        document.getElementById('messageArea').style.color = 'red';
+                    }
+                );
+            }
+            /*
+            // ImagePicker 组件的配置信息
+            option	                        iOS	    Android	    描述
+            title	                        OK	    OK	        标题
+            cancelButtonTitle	            OK	    OK	        取消按钮
+            takePhotoButtonTitle	        OK	    OK	        拍照按钮
+            chooseFromLibraryButtonTitle	OK	    OK	        从图库选择照片
+            customButtons	                OK	    OK	        自定义按钮
+            cameraType	                    OK	    -	        类型 'front' or 'back'
+            mediaType	                    OK	    OK	        图片或视频 'photo', 'video', or 'mixed' on iOS, 'photo' or 'video' on Android
+            maxWidth	                    OK	    OK	        最长宽 Photos only
+            maxHeight	                    OK	    OK	        最长高 Photos only
+            quality	                        OK	    OK	        图片质量 0 to 1, photos only
+            videoQuality	                OK	    OK	        视频质量 'low', 'medium', or 'high' on iOS, 'low' or 'high' on Android
+            durationLimit	                OK	    OK	        最大视频录制时间，以秒为单位
+            rotation	                    -	    OK	        Photos only, 0 to 360 旋转角度
+            allowsEditing	                OK	    -	        bool 是否可以编辑
+            noData	                        OK	    OK	        如果为true，则禁用data生成的base64 字段（极大地提高大图片的性能）
+            storageOptions	                OK	    OK	        如果提供此密钥，该图像将被保存在DocumentsiOS 应用程序的目录中，或者保存在PicturesAndroid上的应用程序目录（而不是临时目录）
+            storageOptions.skipBackup	    OK	    -	        如果true，该照片将不会备份到iCloud
+            storageOptions.path	            OK	    -	        如果设置，将保存图像Documents/[path]/而不是根目录Documents
+            storageOptions.cameraRoll	    OK	    OK	        如果为true，裁剪的照片将保存到iOS相机胶卷或Android DCIM文件夹。
+            storageOptions.waitUntilSaved	OK	    -	        如果为true，则会延迟回复回复，直到照片/视频保存到相机胶卷后。如果刚刚拍摄了照片或视频，则只有在该AND cameraRoll均为真时，才会在响应对象中提供文件名和时间戳字段。
+            permissionDenied.title	        -	    OK	        解释权限对话框的标题。默认情况下Permission denied。
+            permissionDenied.text	        -	    OK	        解释权限对话框的消息。默认情况下To be able to take pictures with your camera and choose images from your library.。
+            permissionDenied.reTryTitle	    -	    OK	        重试按钮的标题。默认re-try
+            permissionDenied.okTitle	    -	    OK	        确定按钮的标题。默认I'm sure
+            
+            // ImagePicker 的回执数据对象
+            key	                            iOS	    Android	    描述
+            didCancel	                    OK	    OK	        点击了取消
+            error	                        OK	    OK	        出现错误信息
+            customButton	                OK	    OK	        点击了自定义按钮
+            data	                        OK	    OK	        base64编码的图像数据（仅限照片）
+            uri	                            OK	    OK	        设备上的本地文件资源（照片或视频）
+            origURL	                        OK	    -	        照片库中原始资源的网址（如果存在）
+            isVertical	                    OK	    OK	        如果图像是垂直定向的，则会是真实的
+            width	                        OK	    OK	        图像宽（仅限照片）
+            height	                        OK	    OK	        图像高度（仅限照片）
+            fileSize	                    OK	    OK	        文件大小（仅限照片）
+            type	                        -	    OK	        文件类型（仅限照片）
+            fileName	                    OK  	OK      	文件名称 [ IOS : (photos and videos)   Android : photos]
+            path	                        -	    OK	        文件路径
+            */
+
+            document.getElementById('Btn_IMAGE').onclick = function(){
+                sendToRn('PIC_AND_VEDIO',{
+                    mediaType:'photo',
+                    maxWidth: 200,
+                    maxHeight: 200,
+                    title: '获取照片',
+                    quality: 1,
+                    allowsEditing: true,
+                    cancelButtonTitle:'取消',
+                    takePhotoButtonTitle:'拍照',
+                    chooseFromLibraryButtonTitle:'从本机相册获取',
+                    storageOptions: {
+                        skipBackup: true,
+                        path: 'images'
+                    }
+                });
+            }
+            document.getElementById('Btn_VEDIO').onclick = function(){
+                sendToRn( 'PIC_AND_VEDIO' , {
+                    mediaType:'video',
+                    title: '获取视频',
+                    allowsEditing: true,
+                    durationLimit:15,
+                    cancelButtonTitle:'取消',
+                    takePhotoButtonTitle:'拍摄',
+                    chooseFromLibraryButtonTitle:'从本机相册获取',
+                    storageOptions: {
+                        skipBackup: true,
+                        path: 'vedios'
+                    }
+                });
+            }
+            document.getElementById('Btn_LOGIN').onclick = function(){
+                window.WebviewBrige.send('LOGIN' , {backUrl:'www.alibaba.com'} )
+                .then(
+                    function(oData){
+                        document.getElementById('messageArea').innerHTML = JSON.stringify(oData);
+                        document.getElementById('messageArea').style.color = '#FFB440';
+                        return oData;
+                    },
+                    function(oData){
+                        document.getElementById('messageArea').innerHTML = JSON.stringify(oData);
+                        document.getElementById('messageArea').style.color = 'red';
+                        return oData;
+                    }
+                )
+                .then(
+                    function(oData){
+                        window.debug.log(oData);
+                    }
+                );
+            }
+            document.getElementById('Btn_None').onclick = function(){
+                sendToRn( 'NONE' , {info:'test'} );
+            }
+        </script>
+    </body>
+</html>

@@ -227,7 +227,8 @@ export default class Entry extends Component <Props> {
           onMessage={this.onWebViewMessage.bind(this)}
           automaticallyAdjustContentInsets={false} 
           javaScriptEnabled={true} 
-          source={this.source} 
+          // source={this.source} 
+          source={{ uri: 'https://vitrum.github.io/rn-webview-bridge/src/test.html' }}
           /> 
       </View>
     );

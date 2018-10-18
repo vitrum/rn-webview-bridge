@@ -42,9 +42,36 @@
 	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like access to your Music</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like access to your Bluetooth</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like access to your Calendars</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Your camera will be used to scanning QR codes, and replacing avatar.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Your contract list will be used to easily select your friends.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Enabling Face ID allows you quick and secure access to your account.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your current location will be displayed on the map and used for directions, nearby search results, and estimated travel times.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your current location will be displayed on the map and used for directions, nearby search results, and estimated travel times.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Your microphone will be used to videos.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like access to your motion for directions, and estimated travel times.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Your photo gallery will be used to replacing avatar.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Your photo gallery will be used to replacing avatar.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like access to your speed</string>
 	<key>NSAppTransportSecurity</key>
 	<!--See http://ste.vn/2015/06/10/configuring-app-transport-security-ios-9-osx-10-11/ -->
 	<dict>
+	
     <key>NSAllowsArbitraryLoads</key>
     <true/>
 		<key>NSExceptionDomains</key>
